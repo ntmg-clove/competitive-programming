@@ -12,5 +12,5 @@ echo 'templateの作成を行います。'
 
 for level in {a..d}
 do
-    cp -p ./python/template.py ./abc/${level}${1}.py
+    cp -p ./python/template.py ./abc/local/${level}${1}.py
 done
