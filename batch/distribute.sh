@@ -9,8 +9,9 @@ fi
 
 cd ..
 echo 'templateの作成を行います。'
+mkdir ./abc/${cnt}
 
 for level in {a..d}
 do
-    cp -p ./python/template.py ./abc/local/${level}${1}.py
+    cp -p ./python/template.py ./abc/local/${level}${cnt}.py
 done
