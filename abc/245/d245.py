@@ -28,32 +28,15 @@ C.reverse()
 
 B = []
 
-tmp = C[: N + 1]
 idx = 0
-start = tmp[0] // A[0]
-addi = N + 1
-while idx <= N + 1:
-    debug_("---------------------------------")
-    # print("idx", idx)
-    # print("A", A)
-    # print("B", B)
-    # print("tmp", tmp)
-    B.append(start)
-    debug_("[start]:", start)
-    tmp2 = []
-    for i in range(N + 1):
-        if i > 0:
-            tmp2.append(tmp[i] - A[i] * start)
-    if idx < N + 1:
-        tmp2.append(C[addi])
-
-    debug_("[tmp]", tmp)
-    debug_("[tmp2]", tmp2)
-    debug_("[B]", B)
-    idx += 1
-    addi += 1
-    tmp = tmp2
-    start = tmp[0] // A[0]
+for i in range(M + 1):
+    multi = C[i] // A[0]
+    B.append(multi)
+    for j in range(N + 1):
+        C[i + j] = C[i + j] - multi * A[j]
+    
+    debug_("B:", B)
+    debug_("C:", C)
 
 B.reverse()
 
