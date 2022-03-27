@@ -11,8 +11,10 @@ PRINT_DEB = True
 def debug_(msg: str, ppr: str = None) -> None:
     if not PRINT_DEB:
         return
-    print(msg)
+    print(msg, end="")
     if ppr:
         pprint(ppr)
+    else:
+        print()
 
     return
